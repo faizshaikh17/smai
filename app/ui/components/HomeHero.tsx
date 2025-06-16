@@ -30,24 +30,25 @@ const HomeHero = () => {
                                 label="Get supermemory"
                                 href="https://console.supermemory.ai/"
                                 target="_blank"
-                                className="h-12 text-lg md:w-auto"
+                                className="md:h-[3.5rem] md:text-xl font-normal md:w-[19rem]"
                                 suplabel="TM"
+                                label2='↵'
                             />
                         </div>
-                        <p className="text-sm sm:text-base font-medium text-gray-300 md:text-left max-w-xl">
-                            Context engine for your app. Personalise LLMs for your users.
-                            <br />
-                            Built for developers who ship.{' '}
-                            <Link
-                                href="https://docs.supermemory.ai/introduction"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="underline"
-                            >
-                                Start building
-                            </Link>{' '}
-                            <sup className="text-xs">DOCS</sup>
-                        </p>
+                        <div className="text-sm sm:text-base space-y-2 font-medium text-gray-300 md:text-left">
+                            <p> Context engine for your app. Personalise LLMs for your users.</p>
+                            <div className='flex gap-1'>
+                                <p>Built for developers who ship.</p>
+                                <Link
+                                    href="https://docs.supermemory.ai/introduction"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline"
+                                >
+                                    Start building with DOCS
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
