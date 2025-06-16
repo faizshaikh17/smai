@@ -30,7 +30,7 @@ const HomeHero = () => {
                                 label="Get supermemory"
                                 href="https://console.supermemory.ai/"
                                 target="_blank"
-                                className="h-12 px-8 text-lg md:w-auto"
+                                className="h-12 text-lg md:w-auto"
                                 suplabel="TM"
                             />
                         </div>
