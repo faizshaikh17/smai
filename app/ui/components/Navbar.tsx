@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Button from './Button';
 
 const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,17 +31,9 @@ const Navbar: React.FC = () => {
                 }`}
         >
             <div
-                className={`p-1 mx-auto 
-    border border-neutral-600/50 
-    rounded-[1.1rem] 
-    bg-[#1C1F24] 
-    shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] 
-    transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] 
-    will-change-[width] 
-    ${isAtTop ? 'w-full' : 'w-[70%]'}`}
-            >
+                className={`p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-[#1C1F24] shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-800 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-[width] ${isAtTop ? 'w-full' : 'w-[70%]'}`}>
 
-                <div className="container mx-auto px-3 bg-[#21252A] rounded-xl flex items-center py-3 justify-between shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)]">
+                <div className="px-3 bg-[#21252A] rounded-xl flex items-center py-3 justify-between shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)]">
                     <div className="flex items-center gap-4 w-full md:w-auto">
                         <Link href="/" aria-label="home" className="flex items-end">
                             <Image
@@ -61,7 +54,7 @@ const Navbar: React.FC = () => {
                             />}
                         </Link>
 
-                        <div className="hidden md:flex md:flex-row md:gap-8">
+                        <div className="hidden ml-2 md:flex md:flex-row md:gap-8">
                             <Link
                                 href="https://supermemory.ai/blog"
                                 target="_blank"
@@ -91,7 +84,7 @@ const Navbar: React.FC = () => {
                         aria-label="menu"
                         aria-expanded={isMenuOpen}
                     >
-                        <div className="space-y-1.5">
+                        <div className="space-y-1.5 ">
                             <span
                                 className={`block w-6 h-0.5 bg-current transition-transform duration-200 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''
                                     }`}
@@ -155,15 +148,12 @@ const Navbar: React.FC = () => {
                                 </Link>
                             </div>
 
-                            <Link href="https://console.supermemory.ai/" target="_blank">
-                                <div className="p-[2px] w-full rounded-[0.9rem] bg-gradient-to-r from-blue-500 via-white to-gray-400">
-                                    <div className="p-1 w-full flex items-center justify-center rounded-[0.85rem] bg-[#1C1F24] shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)]">
-                                        <span className="font-medium text-base text-[var(--white)] px-4 py-2 bg-[#21252A] rounded-[0.7rem] flex items-center justify-between shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)] transition-colors duration-200 hover:bg-[#2A2E36]">
-                                            Get supermemory<sup className="ml-1 text-[0.5rem]">TM</sup>
-                                        </span>
-                                    </div>
-                                </div>
-                            </Link>
+                            <Button label="Get supermemory"
+                                href="https://console.supermemory.ai/"
+                                target="_blank"
+                                className="md:w-auto"
+                                suplabel='TM'
+                            />
                         </div>
                     </nav>
                 </div>
