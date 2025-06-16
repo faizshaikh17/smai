@@ -57,7 +57,7 @@ const HomeHero = () => {
                 alt="Grid asset"
                 width={1600}
                 height={900}
-                className="absolute left-0 top-0 -z-10 w-full object-cover opacity-20"
+                className="absolute left-0 top-0 -z-0 w-full object-cover opacity-20"
                 loading="lazy"
             />
         </section>
