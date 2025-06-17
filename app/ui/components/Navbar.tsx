@@ -27,11 +27,11 @@ const Navbar: React.FC = () => {
     return (
         <header
             role="banner"
-            className={`sticky top-6 z-50 transition-transform duration-500 ease-linear ${isMounted ? 'translate-y-0' : '-translate-y-full opacity-0 pointer-events-none'
+            className={`sticky top-6 z-100 transition-transform duration-500 ease-linear ${isMounted ? 'translate-y-0' : '-translate-y-full opacity-0 pointer-events-none'
                 }`}
         >
             <div
-                className={`p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-[#1C1F24] shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-800 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-[width] ${isAtTop ? 'w-full' : 'w-[70%]'}`}>
+                className={`p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-[#1C1F24] shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-800 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-[width] ${isAtTop ? 'w-full' : 'md:w-[70%]'}`}>
 
                 <div className="px-3 bg-[#21252A] rounded-xl flex items-center py-3 justify-between shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)]">
                     <div className="flex items-center gap-4 w-full md:w-auto">

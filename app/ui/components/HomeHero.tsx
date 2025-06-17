@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
 
-const HomeHero = () => {
+const HomeHero: React.FC = () => {
     return (
-        <section className="relative overflow-hidden py-12">
+        <section className="relative py-12 w-full text-white flex flex-col items-center md:items-start md:flex-row md:h-screen md:max-h-[40rem] pt-[80px] md:pb-[100px] px-4 sm:px-6 mx-auto max-w-[1536px] overflow-hidden">
             <div className="relative z-20 w-full">
                 <div className="relative flex flex-col items-start">
                     <Image
@@ -18,7 +18,7 @@ const HomeHero = () => {
                         loading="lazy"
                     />
 
-                    <div className="absolute z-50 w-full top-[26%] lg:top-[35%]">
+                    <div className="absolute z-50 w-full top-[25%] lg:top-[37%]">
                         <p className="text-3xl max-w-5xl sm:text-4xl md:text-[5rem] font-semibold leading-[100%] tracking-tight text-white">
                             The universal memory API for the AI era
                         </p>
