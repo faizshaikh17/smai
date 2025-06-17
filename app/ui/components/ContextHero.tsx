@@ -90,7 +90,7 @@ const ContextHero: React.FC = () => {
                             fill="#FB2C36"
                           />
                         </svg>
-                        <span className="text-xs uppercase text-neutral-500">Painfully slow. Let's try another.</span>
+                        <span className="text-xs uppercase text-neutral-500">Painfully slow. Let’s try another.</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <svg width="14" height="14" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@ const ContextHero: React.FC = () => {
                             fill="#FB2C36"
                           />
                         </svg>
-                        <span className="text-xs uppercase text-neutral-500">Won't scale. Back to square one.</span>
+                        <span className="text-xs uppercase text-neutral-500">Won’t scale. Back to square one.</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <svg width="14" height="14" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +144,7 @@ const ContextHero: React.FC = () => {
                             fill="#FFB900"
                           />
                         </svg>
-                        <span className="text-xs uppercase text-neutral-500">Can't keep up with new releases</span>
+                        <span className="text-xs uppercase text-neutral-500">Can’t keep up with new releases</span>
                       </li>
                     </ul>
                   </div>
