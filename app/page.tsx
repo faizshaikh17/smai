@@ -2,6 +2,7 @@ import Navbar from "./ui/components/Navbar";
 import HomeHero from "./ui/components/HomeHero";
 import ContextHero from "./ui/components/ContextHero";
 import SolutionsSection from "./ui/components/SolutionsSection";
+import HomeFeatures from "./ui/components/HomeFeatures";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,8 @@ export default function Home() {
         <ContextHero />
         <SolutionsSection />
       </main>
+      <HomeFeatures />
+
     </>
   );
 }
