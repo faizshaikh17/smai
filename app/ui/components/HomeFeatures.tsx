@@ -200,11 +200,11 @@ const HomeFeatures = () => {
                             <div
                                 key={index}
                                 className={clsx(
-                                    'border border-neutral-200 p-8 bg-white flex flex-col items-center text-center md:items-start md:text-left',
-                                    index === 2 ? 'sm:col-span-2 md:flex-row md:items-center md:gap-8 md:w-full' : 'w-full'
+                                    'border border-neutral-200 max-w-[28rem] md:[clip-path:polygon(0%_0%,calc(100%-80px)_0%,100%_100px,100%_100%,0%_100%)] p-12 bg-white flex flex-col items-center text-center md:items-start md:text-left',
+                                    index === 2 ? 'sm:col-span-2 md:flex-row md:items-center md:gap-8 max-w-[58rem]' : 'w-full'
                                 )}
                             >
-                                <div className="flex flex-col items-center md:items-start flex-1">
+                                <div className="flex flex-col gap-4 items-center md:items-start flex-1">
                                     <Image
                                         src={feature.img}
                                         alt={feature.subtitle}
