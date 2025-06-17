@@ -7,7 +7,7 @@ import Button from './Button';
 
 const CodeBlock = ({ code, language }: { code: string; language: string }) => (
     <div className="p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-neutral-900 shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)]">
-        <pre className="p-8 text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.5] max-w-[44rem] bg-[var(--background)] rounded-xl flex items-center flex-col gap-2 shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)]">
+        <pre className="p-4 sm:p-6 md:p-8 text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.5] max-w-[44rem] bg-[var(--background)] rounded-xl flex items-center flex-col gap-2 shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)]">
             <code className={`text-wrap language-${language}`}>{code}</code>
         </pre>
     </div>
@@ -120,7 +120,7 @@ const data = await response.json();`,
                 </div>
 
                 <div className="bg-gradient-to-b w-full md:p-4 p-2 rounded-[2.5rem] md:rounded-none from-teal-100 via-blue-500 to-transparent">
-                    <div className="bg-[var(--background)] p-[clamp(1.5rem,5vw,5rem)] rounded-4xl flex flex-col md:flex-row justify-between items-center gap-[clamp(2rem,4vw,4rem)] md:[clip-path:polygon(0%_0%,calc(100%-80px)_0%,100%_90px,100%_100%,0%_100%)]">
+                    <div className="bg-[var(--background)] p-4 sm:p-6 md:p-[clamp(1.5rem,5vw,5rem)] rounded-4xl flex flex-col md:flex-row justify-between items-center gap-[clamp(2rem,4vw,4rem)] md:[clip-path:polygon(0%_0%,calc(100%-80px)_0%,100%_90px,100%_100%,0%_100%)]">
                         <div className="flex flex-col gap-8">
                             <div className="text-xs uppercase text-neutral-400 font-medium mb-4">
                                 product • product • product
@@ -192,16 +192,16 @@ const client = new OpenAI({
 
                     <div className="flex w-full max-w-5xl flex-col">
                         <div className="flex bg-white flex-col rounded-xl py-2">
-                            <div className="flex py-2 px-6 flex-wrap border-b border-neutral-600/30">
-                                <div className="bg-neutral-300 p-1 relative flex rounded-2xl flex-wrap">
+                            <div className="flex py-2 px-4 sm:px-6 flex-wrap border-b border-neutral-600/30">
+                                <div className="bg-neutral-300 p-1 relative flex rounded-2xl overflow-hidden">
                                     {tabs.map((tab) => (
                                         <button
                                             key={tab.name}
                                             type="button"
                                             onClick={() => setActiveTab(tab.name)}
-                                            className={`px-4 py-3 rounded-xl ${activeTab === tab.name
-                                                    ? 'bg-neutral-700 text-white'
-                                                    : 'text-gray-800 hover:bg-neutral-200'
+                                            className={`md:px-4 md:py-3 text-sm md:text-base rounded-xl ${activeTab === tab.name
+                                                ? 'bg-neutral-700 text-white'
+                                                : 'text-gray-800 hover:bg-neutral-200'
                                                 }`}
                                         >
                                             {tab.name}
@@ -215,7 +215,7 @@ const client = new OpenAI({
                                     className={activeTab === tab.name ? 'block' : 'hidden'}
                                 >
                                     <div className="relative">
-                                        <pre className="p-6 sm:p-8 text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.5] max-w-[44rem] flex items-center flex-col gap-2">
+                                        <pre className="p-4 sm:p-6 text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.5] max-w-[44rem] flex items-center flex-col gap-2">
                                             <code className="text-wrap text-neutral-600 language-javascript">
                                                 {tab.code}
                                             </code>
