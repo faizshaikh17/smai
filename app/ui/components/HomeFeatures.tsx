@@ -142,7 +142,11 @@ const HomeFeatures = () => {
                                         : 'border-[#babbbd] bg-[#efefef]'
                                 )}>
                                     <div className="flex flex-wrap items-center gap-8 flex-1">
-                                        <div className="text-3xl font-medium text-[#BABBBD]">
+                                        <div className={clsx("text-3xl font-medium ",
+                                            visibleIndexes.includes(i)
+                                                ? 'text-black/80'
+                                                : 'text-[#BABBBD]'
+                                        )}>
                                             {feature.number}
                                         </div>
                                         <Image
