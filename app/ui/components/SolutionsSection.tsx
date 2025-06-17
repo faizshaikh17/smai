@@ -30,7 +30,7 @@ const CopyButton = ({ text }: { text: string }) => {
         <button
             type="button"
             onClick={handleCopy}
-            className="flex absolute text-neutral-400 top-2 right-2 items-center gap-2 px-4 rounded"
+            className="flex absolute text-neutral-400 top-4 right-2 items-center gap-2 px-4 rounded"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

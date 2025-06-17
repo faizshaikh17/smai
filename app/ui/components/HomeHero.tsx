@@ -30,9 +30,8 @@ const HomeHero: React.FC = () => {
                                 label="Get supermemory"
                                 href="https://console.supermemory.ai/"
                                 target="_blank"
-                                className="md:h-[3.5rem] md:text-xl font-normal md:w-[19rem]"
+                                className="text-lg md:w-[18rem] w-full"
                                 suplabel="TM"
-                                label2='↵'
                             />
                         </div>
                         <div className="text-sm sm:text-base space-y-2 font-medium text-gray-300 md:text-left">

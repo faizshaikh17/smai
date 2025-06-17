@@ -24,15 +24,22 @@ const Navbar: React.FC = () => {
         };
     }, []);
 
+    const navLinks = [
+        { label: 'Blog', href: 'https://supermemory.ai/blog', target: '_blank' },
+        { label: 'Docs', href: 'https://docs.supermemory.ai/introduction', target: '_blank' },
+        { label: 'Pricing', href: '/pricing' }
+    ];
+
     return (
         <header
             role="banner"
-            className={`sticky top-6 z-100 transition-transform duration-500 ease-linear ${isMounted ? 'translate-y-0' : '-translate-y-full opacity-0 pointer-events-none'
+            className={`sticky top-6 z-100 md:mx-8 mx-4 transition-transform duration-500 ease-linear ${isMounted ? 'translate-y-0' : '-translate-y-full opacity-0 pointer-events-none'
                 }`}
         >
             <div
-                className={`p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-[#1C1F24] shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-800 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-[width] ${isAtTop ? 'w-full' : 'md:w-[70%]'}`}>
-
+                className={`p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-[#1C1F24] shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-800 ease-[cubic-bezier(0.25,0.8,0.25,1)] will-change-[width] ${isAtTop ? 'w-full' : 'md:w-[70%]'
+                    }`}
+            >
                 <div className="px-3 bg-[#21252A] rounded-xl flex items-center py-3 justify-between shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)]">
                     <div className="flex items-center gap-4 w-full md:w-auto">
                         <Link href="/" aria-label="home" className="flex items-end">
@@ -44,37 +51,27 @@ const Navbar: React.FC = () => {
                                 className="h-8 w-auto"
                                 priority
                             />
-                            {isAtTop && <Image
+                            <Image
                                 src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06595_logo-navbag-long.svg"
                                 alt="Text Logo"
                                 width={200}
                                 height={40}
-                                className='hidden md:block h-6 w-auto mx-3.5 transition-opacity duration-300 '
+                                className="hidden md:block h-6 w-auto mx-3.5 transition-opacity duration-300"
                                 priority
-                            />}
+                            />
                         </Link>
 
                         <div className="hidden ml-2 md:flex md:flex-row md:gap-8">
-                            <Link
-                                href="https://supermemory.ai/blog"
-                                target="_blank"
-                                className="text-[var(--white)] hover:underline font-medium text-base transition-colors duration-200"
-                            >
-                                Blog
-                            </Link>
-                            <Link
-                                href="https://docs.supermemory.ai/introduction"
-                                target="_blank"
-                                className="text-[var(--white)] hover:underline font-medium text-base transition-colors duration-200"
-                            >
-                                Docs
-                            </Link>
-                            <Link
-                                href="/pricing"
-                                className="text-[var(--white)] hover:underline font-medium text-base transition-colors duration-200"
-                            >
-                                Pricing
-                            </Link>
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.label}
+                                    href={link.href}
+                                    target={link.target}
+                                    className="text-[var(--white)] hover:underline font-medium text-base transition-colors duration-200"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
                         </div>
                     </div>
 
@@ -84,7 +81,7 @@ const Navbar: React.FC = () => {
                         aria-label="menu"
                         aria-expanded={isMenuOpen}
                     >
-                        <div className="space-y-1.5 ">
+                        <div className="space-y-1.5">
                             <span
                                 className={`block w-6 h-0.5 bg-current transition-transform duration-200 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''
                                     }`}
@@ -100,62 +97,51 @@ const Navbar: React.FC = () => {
                         </div>
                     </button>
 
-                    <nav
-                        className={`${isMenuOpen ? 'flex' : 'hidden'
-                            } w-full md:flex md:w-auto md:items-center md:space-x-6 mt-4 md:mt-0 flex-col md:flex-row`}
-                        role="navigation"
-                    >
-                        <div className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-6 w-full md:w-auto">
-                            <div className="flex justify-center md:justify-start space-x-4">
-                                <Link
-                                    href="https://github.com/supermemoryai/supermemory"
-                                    target="_blank"
-                                    className="flex items-center text-[var(--neutral-light)] hover:text-[var(--white)] transition-colors duration-200"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="15"
-                                        height="15"
-                                        viewBox="0 0 20 21"
-                                        className="mr-1 fill-current"
-                                        aria-hidden="true"
-                                    >
-                                        <path d="M9.99711 0.916996C7.62311 0.917996 5.32711 1.749 3.51911 3.261C1.71811 4.761 0.515107 6.858 0.129107 9.17C-0.250893 11.475 0.216107 13.841 1.44311 15.829C2.68311 17.834 4.59211 19.334 6.83311 20.065C7.33111 20.156 7.51811 19.852 7.51811 19.593C7.51811 19.335 7.50811 18.585 7.50411 17.765C4.72311 18.359 4.13411 16.605 4.13411 16.605C3.68111 15.465 3.02511 15.166 3.02511 15.166C2.11811 14.558 3.09311 14.569 3.09311 14.569C4.09811 14.639 4.62611 15.583 4.62611 15.583C5.51711 17.085 6.96611 16.65 7.53611 16.396C7.62611 15.76 7.88611 15.327 8.17211 15.082C5.95011 14.834 3.61511 13.992 3.61511 10.227C3.60211 9.247 3.97211 8.301 4.64511 7.589C4.54211 7.342 4.19911 6.343 4.74211 4.986C4.74211 4.986 5.58211 4.722 7.49211 5.993C9.13311 5.552 10.8601 5.552 12.5011 5.993C14.4101 4.723 15.2481 4.986 15.2481 4.986C15.7931 6.642 15.4501 7.339 15.3461 7.589C16.4411 8.301 16.8111 9.248 16.7971 10.229C16.7971 14.003 14.4571 14.834 12.2311 15.077C12.5891 15.383 12.9091 15.98 12.9091 16.897C12.9091 18.212 12.8971 19.27 12.8971 19.594C12.8971 19.855 13.0771 20.161 13.5841 20.065C15.8261 19.335 17.7361 17.833 18.9761 15.828C20.2031 13.839 20.6691 11.474 20.2891 9.168C19.9031 6.856 18.6991 4.759 16.8971 3.259C15.0781 1.744 12.7851 0.914996 10.4181 0.916996H9.99711Z" />
-                                    </svg>
-                                    <span className="font-medium text-[var(--white)] text-xs">9.5K</span>
-                                </Link>
+                    <div className="hidden md:flex md:items-center md:space-x-6">
+                        <Button
+                            label="Get supermemory"
+                            href="https://console.supermemory.ai/"
+                            target="_blank"
+                            className="md:w-auto"
+                            suplabel="TM"
+                        />
+                    </div>
+                </div>
+            </div>
 
-                                <Link
-                                    href="https://x.com/supermemoryai?lang=en"
-                                    target="_blank"
-                                    className="flex items-center text-[var(--neutral-light)] hover:text-[var(--white)] transition-colors duration-200"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="15"
-                                        height="15"
-                                        viewBox="0 0 16 15"
-                                        className="mr-1 fill-current"
-                                        aria-hidden="true"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            clipRule="evenodd"
-                                            d="M6.019 8.2L0.304 14.723H2.836L7.21 9.717L11.064 14.724L16 14.697L9.742 6.421L15.082 0.304001L12.592 0.276001L8.557 4.873L5.106 0.283001L0 0.278001L6.019 8.2ZM13.011 13.222L11.733 13.217L2.957 1.727H4.33L13.011 13.222Z"
-                                        />
-                                    </svg>
-                                    <span className="font-medium text-[var(--white)] text-xs">4.1k</span>
-                                </Link>
-                            </div>
+            <div
+                className={`absolute top-full left-0 w-full mt-2 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+                    }`}
+            >
+                <div className="px-5 py-4 bg-[#21252A] border border-neutral-700/50 rounded-xl shadow-lg z-50 space-y-4">
+                    <div className="flex flex-col space-y-4">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.label}
+                                href={link.href}
+                                target={link.target}
+                                className="text-[var(--white)] hover:underline font-medium text-base transition-colors duration-200"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                        <Button
+                            label="Get supermemory"
+                            href="https://console.supermemory.ai/"
+                            target="_blank"
+                            className="w-full"
+                            suplabel="TM"
+                        />
+                    </div>
 
-                            <Button label="Get supermemory"
-                                href="https://console.supermemory.ai/"
-                                target="_blank"
-                                className="md:w-auto"
-                                suplabel='TM'
-                            />
-                        </div>
-                    </nav>
+                    <div className="flex justify-between w-full items-center pt-4 border-t border-neutral-700/50 text-[var(--white)] text-sm">
+                        <Link href="https://github.com/supermemoryai" target="_blank" className="hover:underline">
+                            GitHub • 9.9k stars
+                        </Link>
+                        <Link href="https://x.com/SupermemoryAI" target="_blank" className="hover:underline">
+                            X • 6.9k followers
+                        </Link>
+                    </div>
                 </div>
             </div>
         </header>
