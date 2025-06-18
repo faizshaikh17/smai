@@ -131,7 +131,7 @@ const HomeFeatures = () => {
                                 className={clsx(
                                     'transition-colors duration-700 ease-in-out md:[clip-path:polygon(0%_0%,calc(100%-110px)_0%,100%_110px,100%_100%,0%_100%)]',
                                     visibleIndexes.includes(i)
-                                        ? 'bg-gradient-to-r pr-[0.06rem] py-[0.06rem] from-blue-400 via-blue-500 to bg-blue-700'
+                                        ? 'bg-gradient-to-r pr-[0.06rem] py-[0.06rem] from-blue-400/50 to bg-blue-500/50'
                                         : 'bg-[#babbbd]/50 p-[0.06rem]'
                                 )}
                             >

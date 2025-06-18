@@ -30,7 +30,7 @@ const CopyButton = ({ text }: { text: string }) => {
         <button
             type="button"
             onClick={handleCopy}
-            className="flex absolute text-neutral-400 top-4 right-2 items-center gap-2 px-4 rounded"
+            className="flex absolute text-neutral-400 md:top-6 top-6 right-2 md:right-4 items-center gap-2 px-4 rounded"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const CopyButton = ({ text }: { text: string }) => {
     );
 };
 
-const SolutionsSection: React.FC = () => {
+const Solutions: React.FC = () => {
     const [activeTab, setActiveTab] = useState('Connect apps');
 
     const tabs = [
@@ -119,7 +119,7 @@ const data = await response.json();`,
                     </p>
                 </div>
 
-                <div className="bg-gradient-to-b w-full md:p-4 p-2 rounded-[2.5rem] md:rounded-none from-teal-100 via-blue-500 to-transparent">
+                <div className="bg-gradient-to-b w-full md:p-4 p-2 rounded-[2.5rem] md:rounded from-teal-100 via-blue-500 to-transparent">
                     <div className="bg-[var(--background)] p-4 sm:p-6 md:p-[clamp(1.5rem,5vw,5rem)] rounded-4xl flex flex-col md:flex-row justify-between items-center gap-[clamp(2rem,4vw,4rem)] md:[clip-path:polygon(0%_0%,calc(100%-80px)_0%,100%_90px,100%_100%,0%_100%)]">
                         <div className="flex flex-col gap-8 w-full md:w-auto">
                             <div className="text-xs uppercase text-neutral-400 font-medium mb-4">
@@ -193,13 +193,13 @@ const client = new OpenAI({
                     <div className="flex w-full max-w-5xl flex-col">
                         <div className="flex bg-white flex-col rounded-xl py-2">
                             <div className="flex py-2 px-4 sm:px-6 flex-wrap border-b border-neutral-600/30">
-                                <div className="bg-neutral-300 p-1 relative flex flex-wrap rounded-2xl overflow-hidden gap-2">
+                                <div className="bg-neutral-300 p-1 relative flex  rounded-2xl overflow-hidden">
                                     {tabs.map((tab) => (
                                         <button
                                             key={tab.name}
                                             type="button"
                                             onClick={() => setActiveTab(tab.name)}
-                                            className={`px-3 py-2 text-sm md:text-base rounded-xl ${activeTab === tab.name
+                                            className={`md:px-3 md:py-3 py-2 md:leading-none md:font-normal leading-[100%] text-sm font-semibold md:text-base rounded-xl ${activeTab === tab.name
                                                 ? 'bg-neutral-700 text-white'
                                                 : 'text-gray-800 hover:bg-neutral-200'
                                                 }`}
@@ -248,4 +248,4 @@ const client = new OpenAI({
     );
 };
 
-export default SolutionsSection;
+export default Solutions;

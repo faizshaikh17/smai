@@ -21,7 +21,7 @@ const CopyButton = ({ text }: { text: string }) => {
         <button
             type="button"
             onClick={handleCopy}
-            className="absolute top-4 right-2 flex items-center gap-2 px-4 text-neutral-400 rounded"
+            className="absolute md:top-4 top-2 md:right-2 right-0 flex items-center gap-2 px-4 text-neutral-400 rounded"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const CopyButton = ({ text }: { text: string }) => {
     );
 };
 
-const Footer: React.FC = () => {
+const SDK: React.FC = () => {
     const [activeTab, setActiveTab] = useState('Typescript');
 
     const tabs = [
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                                 ))}
                             </div>
 
-                            <div className="relative w-full max-w-full sm:max-w-[44rem] px-2">
+                            <div className="relative w-full max-w-full sm:max-w-[44rem]">
                                 {tabs.map((tab) => (
                                     <div
                                         key={tab.name}
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
                                     >
                                         <div className="relative border w-full border-neutral-600/50 p-1 rounded-[1.1rem] bg-neutral-900 shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)]">
                                             <pre className="p-4 sm:p-6 md:p-8 text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.5] bg-[var(--background)] rounded-xl flex items-start flex-col gap-2 overflow-x-auto">
-                                                <code className={`text-wrap text-blue-400 text-2xl language-${tab.name}`}>
+                                                <code className={`text-wrap text-blue-400 md:text-2xl md:p-0 py-2 text-lg  language-${tab.name}`}>
                                                     {tab.code}
                                                 </code>
                                             </pre>
@@ -155,4 +155,4 @@ const Footer: React.FC = () => {
     );
 };
 
-export default Footer;
+export default SDK;

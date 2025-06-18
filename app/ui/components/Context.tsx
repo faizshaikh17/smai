@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-const ContextHero: React.FC = () => {
+const Context: React.FC = () => {
   return (
     <section className="relative py-2 overflow-hidden">
       <style jsx>{`
@@ -326,4 +326,4 @@ const ContextHero: React.FC = () => {
   );
 };
 
-export default ContextHero;
+export default Context;

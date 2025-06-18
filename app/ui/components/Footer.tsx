@@ -28,10 +28,10 @@ export default function Footer() {
                     alt="Supermemory"
                     width={200}
                     height={50}
-                    className="h-[15rem] w-[90%]"
+                    className="md:h-[15rem] h-[7rem] w-full md:w-[90%]"
                 />
 
-                <div className="flex flex-wrap justify-center gap-6 md:gap-10 w-full max-w-4xl">
+                <div className="flex flex-wrap text-center justify-center gap-6 md:gap-10 w-full">
                     <Button
                         label="Get supermemory"
                         href="https://console.supermemory.ai/"

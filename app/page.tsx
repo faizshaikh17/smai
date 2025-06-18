@@ -1,9 +1,9 @@
 import Navbar from "./ui/components/Navbar";
-import HomeHero from "./ui/components/HomeHero";
-import ContextHero from "./ui/components/ContextHero";
-import SolutionsSection from "./ui/components/SolutionsSection";
-import HomeFeatures from "./ui/components/HomeFeatures";
-import ContextFooter from './ui/components/ContextFooter'
+import Hero from "./ui/components/Hero";
+import Context from "./ui/components/Context";
+import Solutions from "./ui/components/Solutions";
+import Features from "./ui/components/Features";
+import SDK from './ui/components/SDK'
 import PreFooter from "./ui/components/PreFooter";
 import Footer from "./ui/components/Footer";
 export default function Home() {
@@ -15,12 +15,12 @@ export default function Home() {
         className="bg-[var(--background)] text-[var(--neutral-light)] relative flex flex-col px-4 sm:px-6 lg:px-8 font-[var(--typography-body-font)] text-base  leading-5 antialiased"
         role="main"
       >
-        <HomeHero />
-        <ContextHero />
-        <SolutionsSection />
+        <Hero />
+        <Context />
+        <Solutions />
       </main>
-      <HomeFeatures />
-      <ContextFooter />
+      <Features />
+      <SDK />
       <PreFooter />
       <Footer />
 

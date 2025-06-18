@@ -51,14 +51,14 @@ const Navbar: React.FC = () => {
                                 className="h-8 w-auto"
                                 priority
                             />
-                            <Image
+                            {isAtTop && <Image
                                 src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06595_logo-navbag-long.svg"
                                 alt="Text Logo"
                                 width={200}
                                 height={40}
                                 className="hidden md:block h-6 w-auto mx-3.5 transition-opacity duration-300"
                                 priority
-                            />
+                            />}
                         </Link>
 
                         <div className="hidden ml-2 md:flex md:flex-row md:gap-8">
@@ -110,10 +110,10 @@ const Navbar: React.FC = () => {
             </div>
 
             <div
-                className={`absolute top-full left-0 w-full mt-2 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+                className={`absolute top-full left-0 w-full mt-2 p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-[#1C1F24] shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
                     }`}
             >
-                <div className="px-5 py-4 bg-[#21252A] border border-neutral-700/50 rounded-xl shadow-lg z-50 space-y-4">
+                <div className="bg-[#21252A] shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)] px-5 py-4 border border-neutral-700/50 rounded-xl z-50 space-y-4">
                     <div className="flex flex-col space-y-4">
                         {navLinks.map((link) => (
                             <Link
