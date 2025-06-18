@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
                 src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06560_features-grid.svg"
                 alt="features grid"
                 fill
-                className="absolute bottom-0 left-0 w-full -z-0 h-full object-cover opacity-10"
+                className="absolute bottom-0 left-0 w-full -z-10 h-full object-cover opacity-5"
                 priority
             />
         </section>

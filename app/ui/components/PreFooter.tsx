@@ -6,7 +6,7 @@ import NumberSvg from '@/app/Data/NumberSvg';
 const PreFooter: React.FC = () => (
     <section className="relative py-12 md:py-16">
         <div className="container mx-auto px-4 relative z-10">
-            <div className="flex flex-col items-center gap-12 text-center">
+            <div className="flex flex-col items-center z-10 gap-12 text-center">
                 <h1 className="text-3xl md:text-4xl text-white font-semibold max-w-xl">
                     Trusted by Open Source, enterprise, and more than
                 </h1>
@@ -108,7 +108,7 @@ const PreFooter: React.FC = () => (
             <Image
                 src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06561_hero-grid.svg"
                 alt="Background grid"
-                className="absolute left-0 top-0 w-full opacity-20 -z-0"
+                className="absolute left-0 top-0 w-full opacity-20 -z-10"
                 width={1200}
                 height={600}
             />
