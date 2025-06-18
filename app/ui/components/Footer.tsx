@@ -28,7 +28,7 @@ export default function Footer() {
                     alt="Supermemory"
                     width={200}
                     height={50}
-                    className="h-[15rem] w-full max-w-xs"
+                    className="h-[15rem] w-[90%]"
                 />
 
                 <div className="flex flex-wrap justify-center gap-6 md:gap-10 w-full max-w-4xl">
