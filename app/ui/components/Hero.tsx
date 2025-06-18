@@ -6,9 +6,9 @@ import Button from './Button';
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative py-12 text-white flex flex-col items-center md:items-start md:flex-row md:h-screen md:max-h-[40rem] md:pt-[10px] pt-[80px] px-4 sm:px-6 mx-auto overflow-hidden">
+        <section className="relative py-12 w-full text-white flex flex-col items-center md:items-start md:flex-row md:h-screen md:max-h-[40rem] md:pt-[10px] pt-[80px] overflow-hidden">
             <div className="relative z-20 w-full">
-                <div className="relative flex flex-col gap-4 items-start">
+                <div className="relative w-full flex flex-col gap-4 items-start">
                     <Image
                         src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06589_Main%20graphics.svg"
                         alt="Main graphics"
