@@ -48,7 +48,7 @@ export default function Footer() {
                     />
                 </div>
 
-                <div className="flex flex-col md:flex-row md:items-center justify-between w-full max-w-6xl border-t border-neutral-700 pt-8 gap-8 text-xs uppercase">
+                <div className="flex flex-col md:flex-row md:items-center justify-between w-full border-t border-neutral-700 pt-8 gap-8 text-xs uppercase">
                     <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
                         <div>© 2025 supermemory.ai</div>
                         <Link
