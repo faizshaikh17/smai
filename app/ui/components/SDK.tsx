@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Button from './Button';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const CopyButton = ({ text }: { text: string }) => {
     const [copied, setCopied] = useState(false);
@@ -112,13 +114,35 @@ const SDK: React.FC = () => {
                                         className={activeTab === tab.name ? 'block' : 'hidden'}
                                     >
                                         <div className="relative border w-full border-neutral-600/50 p-1 rounded-[1.1rem] bg-neutral-900 shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)]">
-                                            <pre className="p-4 sm:p-6 md:p-8 text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.5] bg-[var(--background)] rounded-xl flex items-start flex-col gap-2 overflow-x-auto">
-                                                <code className={`text-wrap text-blue-400 md:text-2xl md:p-0 py-2 text-lg  language-${tab.name}`}>
+                                            <div className="p-4 sm:p-6 md:p-8 text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.5] bg-[var(--background)] rounded-xl flex flex-col items-start gap-2">
+                                                <SyntaxHighlighter
+                                                    language={tab.name}
+                                                    style={tomorrow}
+                                                    wrapLongLines
+                                                    customStyle={{
+                                                        background: 'transparent',
+                                                        fontSize: 'clamp(0.85rem,1.2vw,1rem)',
+                                                        lineHeight: '1.5',
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        alignItems: 'flex-start',
+                                                        gap: '0.5rem',
+                                                        overflow: 'hidden',
+                                                        padding: '0',
+                                                    }}
+                                                    codeTagProps={{
+                                                        className:
+                                                            'text-wrap text-blue-400 md:text-2xl md:p-0 py-2 text-lg language-' +
+                                                            tab.name,
+                                                    }}
+                                                >
                                                     {tab.code}
-                                                </code>
-                                            </pre>
+                                                </SyntaxHighlighter>
+                                            </div>
+
                                             <CopyButton text={tab.code} />
                                         </div>
+
                                     </div>
                                 ))}
                             </div>

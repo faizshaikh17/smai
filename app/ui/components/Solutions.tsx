@@ -4,14 +4,33 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from './Button';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
 
 const CodeBlock = ({ code, language }: { code: string; language: string }) => (
-    <div className="p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-neutral-900 shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] w-full overflow-x-auto">
-        <pre className="p-4 sm:p-6 md:p-8 text-[clamp(0.75rem,1vw,1rem)] leading-[1.5] bg-[var(--background)] rounded-xl shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)] whitespace-pre-wrap break-words">
-            <code className={`language-${language}`}>{code}</code>
-        </pre>
+    <div className="p-1 mx-auto border border-neutral-600/50 rounded-[1.1rem] bg-neutral-900 shadow-[inset_0_4px_6px_#242629,inset_0_1px_2px_rgba(255,255,255,0.04),inset_0_3px_2px_rgba(209,213,219,0.1),0_3px_10px_rgba(0,0,0,0.25),0_1px_1px_rgba(255,255,255,0.06)] w-full">
+        <div className="p-4 sm:p-6 md:p-8 text-[clamp(0.75rem,1vw,1rem)] leading-[1.5] bg-[var(--background)] rounded-xl shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)] whitespace-pre-wrap break-words">
+            <SyntaxHighlighter
+                language={language}
+                style={tomorrow}
+                wrapLongLines
+                customStyle={{
+                    background: 'transparent',
+                    opacity: 0.75,
+                    fontSize: '1.3rem',
+                    lineHeight: '1.5',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-word',
+                    overflow: '',
+                }}
+            >
+                {code}
+            </SyntaxHighlighter>
+        </div>
     </div>
 );
+
 
 const CopyButton = ({ text }: { text: string }) => {
     const [copied, setCopied] = useState(false);
@@ -153,16 +172,16 @@ const data = await response.json();`,
                                     code={`import OpenAI from "openai"
 
 const client = new OpenAI({  
-  baseUrl: "https://api.supermemory.ai/v3/https://api.openai.com/v1/"
-})`}
+  baseUrl: "https://api.supermemory.ai/v3/https://
+  api.openai.com/v1/"})`}
                                     language="javascript"
                                 />
                                 <CopyButton
                                     text={`import OpenAI from "openai"
 
 const client = new OpenAI({
-  baseUrl: "https://api.supermemory.ai/v3/https://api.openai.com/v1/"
-})`}
+  baseUrl: "https://api.supermemory.ai/v3/
+  https://api.openai.com/v1/"})`}
                                 />
                             </div>
                             <Button
@@ -215,11 +234,27 @@ const client = new OpenAI({
                                     className={activeTab === tab.name ? 'block' : 'hidden'}
                                 >
                                     <div className="relative overflow-x-auto p-4">
-                                        <pre className="p-4 sm:p-6 text-[clamp(0.75rem,1vw,1rem)] leading-[1.5] bg-white rounded-xl shadow-[0_2px_6px_rgba(0,0,0,0.2),0_-1px_2px_rgba(209,213,219,0.05),inset_0_1px_0_rgba(255,255,255,0.01),0_-2px_3px_rgba(0,0,0,0.12)] whitespace-pre-wrap break-words overflow-x-auto">
-                                            <code className="text-neutral-600 language-javascript">
-                                                {tab.code}
-                                            </code>
-                                        </pre>
+                                        <SyntaxHighlighter
+                                            language="javascript"
+                                            style={tomorrow}
+                                            wrapLongLines
+                                            customStyle={{
+                                                padding: '1.5rem',
+                                                fontSize: 'clamp(0.75rem, 1vw, 1rem)',
+                                                lineHeight: '1.5',
+                                                background: '#ffffff',
+                                                borderRadius: '0.75rem',
+                                                boxShadow:
+                                                    '0 2px 6px rgba(0,0,0,0.2), 0 -1px 2px rgba(209,213,219,0.05), inset 0 1px 0 rgba(255,255,255,0.01), 0 -2px 3px rgba(0,0,0,0.12)',
+                                                whiteSpace: 'pre-wrap',
+                                                wordBreak: 'break-word',
+                                                overflow: 'hidden',
+                                                color: '#525252',
+                                            }}
+                                        >
+                                            {tab.code}
+                                        </SyntaxHighlighter>
+
 
                                         <CopyButton text={tab.code} />
                                     </div>

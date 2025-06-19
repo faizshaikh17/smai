@@ -6,9 +6,9 @@ import Button from './Button';
 
 const Hero: React.FC = () => {
     return (
-        <section className="relative py-12 w-full text-white flex flex-col items-center md:items-start md:flex-row md:h-screen md:max-h-[40rem] md:pt-[10px] pt-[80px] overflow-hidden">
+        <section className="relative py-12 w-full text-white flex flex-col items-center md:items-start md:flex-row md:h-screen md:max-h-[40rem] md:pt-[45px] pt-[80px] overflow-hidden">
             <div className="relative z-20 w-full">
-                <div className="relative w-full flex flex-col gap-4 items-start">
+                <div className="relative md:p-1 w-full flex flex-col gap-4 items-start">
                     <Image
                         src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06589_Main%20graphics.svg"
                         alt="Main graphics"
@@ -19,12 +19,12 @@ const Hero: React.FC = () => {
                     />
 
                     <div className=" z-50 w-full">
-                        <p className="text-3xl md:m-0 mt-4 max-w-5xl sm:text-4xl md:text-[5rem] font-semibold leading-[100%] tracking-tight text-white">
+                        <p className="text-3xl md:absolute md:top-41 md:m-0 mt-4 max-w-5xl sm:text-4xl md:text-[5rem] font-semibold leading-[100%] tracking-tight text-white">
                             The universal memory API for the AI era
                         </p>
                     </div>
 
-                    <div className="lg:mt-8 mt-8 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-8 w-full max-w-4xl">
+                    <div className="lg:mt-16 mt-8 flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-8 w-full max-w-4xl">
                         <div className="w-full md:w-auto flex justify-center md:justify-start">
                             <Button
                                 label="Get supermemory"
