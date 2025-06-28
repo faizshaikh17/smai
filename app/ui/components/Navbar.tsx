@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
     const [isAtTop, setIsAtTop] = useState(true);
 
     useEffect(() => {
-        const timeout = setTimeout(() => setIsMounted(true), 600);
+        const timeout = setTimeout(() => setIsMounted(true), 300);
 
         const handleScroll = () => {
             setIsAtTop(window.scrollY <= 10);
